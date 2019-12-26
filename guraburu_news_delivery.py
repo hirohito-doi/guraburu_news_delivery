@@ -32,7 +32,7 @@ def get_articles():
     """グラブル公式のNEWSページから記事を取得する。"""
     # ニュース記事のデータを集める
     response = requests.get(NEWS_URL)
-    response.raise_for_status() # 取得に失敗した場合は例外を上げる
+    response.raise_for_status() # 取得に失敗した場合は例外を投げる
     page = response.text
     doc = soup(page, "html.parser")
 
